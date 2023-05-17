@@ -24,9 +24,9 @@ const Login = () => {
             
             console.log(user);
             Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Password should more then 6 characters'
+                icon: 'success',
+                title: 'Wow!',
+                text: 'Login Successfully'
               })
             navigate(from, {replace: true});
 
