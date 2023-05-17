@@ -1,0 +1,10 @@
+.banner{
+    background-image: url('https://img.freepik.com/premium-photo/toys-collection-isolated-background_488220-1726.jpg?size=626&ext=jpg&ga=GA1.1.110381157.1659454590&semt=ais');
+    background-repeat: no-repeat;
+    background-size: cover;
+    padding-top: 100px;
+    font-weight: 700;
+    font-size: 35px;
+    color:black;
+
+}
