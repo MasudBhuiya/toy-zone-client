@@ -4,6 +4,7 @@ import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../pages/Shared/Social/SocialLogin";
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const Login = () => {
     const {login} = useContext(AuthContext);
@@ -22,7 +23,11 @@ const Login = () => {
             const user = result.user;
             
             console.log(user);
-            alert('Login SuccessFully');
+            Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password should more then 6 characters'
+              })
             navigate(from, {replace: true});
 
             
