@@ -50,7 +50,7 @@ const Navbar = () => {
     </ul>
   </div>
   <div className="navbar-end">
-    {user ? <><img src={user.photoURL
+    {user ? <><img title={user.displayName} className="w-10 h-10 rounded-3xl mr-4" src={user.photoURL
 } alt="" /><button className="btn btn-secondary" onClick={handleLogout}>LogOut</button></> : <button className="btn btn-secondary"><Link to='/login'>Login</Link></button>}
   </div>
 </div> 

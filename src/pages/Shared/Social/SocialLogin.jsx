@@ -1,9 +1,21 @@
 // import React from 'react';
 
-const SocialLogin = () => {
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
+
+const SocialLogin = ({serError}) => {
+    const {signInwithGoogle} = useContext(AuthContext);
+    const handleGoogle = () =>{
+        signInwithGoogle()
+        .then()
+        .catch(error=>serError(error.message))
+    }
     return (
-        <div>
-            
+        <div className=" text-center space-y-3">
+            <p>Else signIn/signUp with_</p>
+            <button onClick={handleGoogle} className="btn  btn-outline ">
+  GOOGLE
+</button>
         </div>
     );
 };

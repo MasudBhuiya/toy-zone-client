@@ -1,33 +1,34 @@
 // import React from 'react';
 
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
-import Swal from "sweetalert2";
+import SocialLogin from "../pages/Shared/Social/SocialLogin";
 
 const Register = () => {
+    const [error, setError]=useState('')
     const {signUp} = useContext(AuthContext)
     const handleSignUp = e =>{
+        setError('')
         e.preventDefault();
         const form = e.target;
         const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password, name);
+        
         if(password.length < 6){
-            return Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Password should more then 6 characters'
-              })
+             setError('Password is less then 6 characters')
+              return;
         }
         signUp(email, password)
         .then(result => {
             const user = result.user;
-            console.log(user)
+            console.log(user);
+            form.reset();
         })
         .catch(error => {
-            console.log(error.message)
+            setError(error.message)
         })
     }
     return (
@@ -69,7 +70,8 @@ const Register = () => {
         </div>
         </form>
         <h1>Already have an account? <Link className='text-orange-500 font-bold' to='/login'>Login</Link></h1>
-        
+        <p className="text-red-600">{error}</p>
+        <SocialLogin></SocialLogin>
       </div>
     </div>
   </div>

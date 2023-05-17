@@ -2,11 +2,12 @@
 
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import SocialLogin from "../pages/Shared/Social/SocialLogin";
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
 
 const Login = () => {
+    const [error, setError] = useState('')
     const {login} = useContext(AuthContext);
     const navigate = useNavigate()
     const location = useLocation();
@@ -29,11 +30,9 @@ const Login = () => {
                 text: 'Login Successfully'
               })
             navigate(from, {replace: true});
-
-            
         })
         .catch(error => {
-            console.log(error.message)
+            setError(error)
         })
 
     }
@@ -66,8 +65,9 @@ const Login = () => {
           <input className="btn btn-warning bg-orange-500 text-white" type="submit" value='Login' name="" id="" />
         </div>
         </form>
-        <h1>New to Car Doctors? <Link className='text-orange-500 font-bold' to='/register'>Sign Up</Link></h1>
-      <SocialLogin></SocialLogin>
+        <h1>New to Toys Shop? <Link className='text-orange-500 font-bold' to='/register'>Sign Up</Link></h1>
+        <p>{error.message}</p>
+      <SocialLogin setError={setError}></SocialLogin>
       </div>
     </div>
   </div>
