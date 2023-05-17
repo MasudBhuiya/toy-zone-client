@@ -3,6 +3,7 @@
 import { useContext } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const {signUp} = useContext(AuthContext)
@@ -13,6 +14,13 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
         console.log(email, password, name);
+        if(password.length < 6){
+            return Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Password should more then 6 characters'
+              })
+        }
         signUp(email, password)
         .then(result => {
             const user = result.user;
@@ -36,22 +44,25 @@ const Register = () => {
           <label className="label">
             <span className="label-text">Name</span>
           </label>
-          <input type="text" placeholder="Name" name='name' className="input input-bordered" />
+          <input type="text" placeholder="Name" name='name' className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Email</span>
           </label>
-          <input type="email" placeholder="email" name='email' className="input input-bordered" />
+          <input type="email" placeholder="email" name='email' className="input input-bordered" required/>
+        </div>
+        <div className="form-control">
+          <label className="label">
+            <span className="label-text">Photo URL</span>
+          </label>
+          <input type="text" placeholder="Photo URL" name='photo' className="input input-bordered" required/>
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Confirm Password</span>
           </label>
-          <input type="password" placeholder="password" name='password' className="input input-bordered" />
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
+          <input type="password" placeholder="password" name='password' className="input input-bordered" required/>
         </div>
         <div className="form-control mt-6">
           <input className="btn btn-warning bg-orange-500 text-white" type="submit" value='Sign-Up' name="" id="" />
