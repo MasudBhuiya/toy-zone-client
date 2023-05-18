@@ -10,6 +10,8 @@ import Home from './pages/Home/Home/Home';
 import AuthProvider from './Provider/AuthProvider';
 import Register from './Login/Register';
 import Login from './Login/Login';
+import Category from './pages/Home/Category/Category';
+import AllToys from './pages/AllToys/AllToys';
 
 const router = createBrowserRouter([
   {
@@ -27,6 +29,14 @@ const router = createBrowserRouter([
       {
         path: 'login',
         element: <Login></Login>
+      },
+      {
+        path: 'category',
+        element: <Category></Category>
+      },
+      {
+        path: 'alltoys',
+        element: <AllToys></AllToys>
       }
     ]
   },
