@@ -23,7 +23,7 @@ const Category = () => {
         setCategory(car)
     }
     const handleTruckBus = () =>{
-        const car = item.filter(ct => ct.sub_cagegory == 'truckBus');
+        const car = item.filter(ct => ct.sub_cagegory == 'truck');
         setCategory(car)
     }
     const handlePolice = () =>{

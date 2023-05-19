@@ -1,31 +1,43 @@
 // import React from 'react';
+// import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+//   import { faTrashAlt } from '@fortawesome/free-solid-svg-icons'
+import { Link } from 'react-router-dom';
 
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
-import { Link } from "react-router-dom";
 
 const ToysCard = ({item}) => {
-    const {name, picture, price, rating, _id} = item;
+    const {name,sub_cagegory, picture, price, _id, quantity, seller} = item;
     return (
-        <div className="card w-96 bg-base-100 shadow-xl">
-  <figure><img src={picture} alt="Shoes" /></figure>
-  <div className="card-body justify-start">
-    <h2 className="card-title">{name}</h2>
-    <p className="flex justify-start">Price: {price}</p>
-    <div className="text-yellow-500 flex justify-start">
-    <FontAwesomeIcon icon={faStar} />
-    <FontAwesomeIcon icon={faStar} />
-    <FontAwesomeIcon icon={faStar} />
-    <FontAwesomeIcon icon={faStar} />
-    <FontAwesomeIcon icon={faStarHalfAlt} /> 
-    <span className="text-black font-bold ms-2"> { rating}</span>
-    </div>
-    <div className="card-actions justify-end">
-      <Link to={`/details/${_id}`}><button  className="btn btn-primary">View Details</button></Link>
-    </div>
-  </div>
-</div>
+      <tr>
+      {/* <th>
+      <button  className="btn btn-sm ">
+      <FontAwesomeIcon icon={faTrashAlt} />
+</button>
+      </th> */}
+      <td>
+          <div className="avatar ">
+
+            <div className="rounded w-24 h-24">
+              {picture && <img src={picture} alt="Avatar Tailwind CSS Component" />}
+            </div>
+          </div>
+          
+      </td>
+      <td>
+        {name}
+      </td>
+      <td>{seller}</td>
+      <td>{sub_cagegory}</td>
+      <td>{price}</td>
+      <td>{quantity}</td>
+      <th>
+        <Link to={`/details/${_id}`}><button className='btn btn-primary'>View Details</button></Link>
+      </th>
+    </tr>
     );
 };
 
 export default ToysCard;
+
+// {
+//   status === 'confirm' ? <span className="font-bold text-primary">Confirmed</span>: <button onClick={()=>handleConfirm(_id)} className="btn btn-ghost btn-xs">Please Confirm</button>
+// }
