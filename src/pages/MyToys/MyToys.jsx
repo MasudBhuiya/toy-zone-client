@@ -3,6 +3,7 @@
 import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyToysCard from "./MyToysCard";
+import Swal from "sweetalert2";
 
 const MyToys = () => {
     const [myToys, setMyToys] = useState([]);
@@ -17,7 +18,68 @@ const MyToys = () => {
             setMyToys(data)
             console.log(data)
         })
-    },[url])
+    },[url]);
+
+
+    const handleDelete = id =>{
+
+        Swal.fire({
+            title: 'Are you sure?',
+            text: "You won't be able to revert this!",
+            icon: 'warning',
+            showCancelButton: true,
+            confirmButtonColor: '#3085d6',
+            cancelButtonColor: '#d33',
+            confirmButtonText: 'Yes, delete it!'
+          }).then((result) => {
+            if (result.isConfirmed) {
+              fetch(`http://localhost:5000/toys/${id}`, {
+            method: 'DELETE',
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+            if(data. deletedCount> 0){
+                const remaining = myToys.filter(booking => booking._id !== id);
+                setMyToys(remaining)
+                Swal.fire(
+                    'Deleted!',
+                    'Your file has been deleted.',
+                    'success'
+                  )
+            }
+        })
+            }
+          })
+
+
+
+
+        // fetch(`http://localhost:5000/toys/${id}`, {
+        //     method: 'DELETE',
+        // })
+        // .then(res => res.json())
+        // .then(data => {
+        //     console.log(data)
+        //     if(data. deletedCount> 0){
+        //         const remaining = myToys.filter(booking => booking._id !== id);
+        //         setMyToys(remaining)
+        //         Swal.fire({
+        //             icon: 'success',
+        //             title: 'Wow!',
+        //             text: 'Added Successfully'
+        //           })
+        //     }
+        // })
+    }
+
+
+
+
+
+
+
+
     return (
         <div>
             <div className="overflow-x-auto w-full">
@@ -38,7 +100,7 @@ const MyToys = () => {
     </thead>
     <tbody>
     {
-                myToys.map(toys => <MyToysCard key={toys._id} toys={toys}></MyToysCard>)
+                myToys.map(toys => <MyToysCard key={toys._id} toys={toys} handleDelete={handleDelete}></MyToysCard>)
             }
       
     </tbody>

@@ -3,12 +3,12 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
   import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
 import { Link } from 'react-router-dom';
 
-const MyToysCard = ({toys}) => {
+const MyToysCard = ({toys, handleDelete}) => {
     const {name,sub_cagegory, picture, price, _id, quantity, seller} = toys;
     return (
         <tr>
       <th>
-      <button  className="btn btn-sm ">
+      <button onClick={()=>handleDelete(_id)} className="btn btn-sm ">
       <FontAwesomeIcon icon={faTrashAlt} />
 </button>
       </th>
