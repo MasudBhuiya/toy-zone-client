@@ -25,6 +25,7 @@ const MyToys = () => {
     {/* head */}
     <thead>
       <tr>
+        <th>Delete</th>
         <th>Image</th>
         <th>Toy Name</th>
         <th>Seller</th>
@@ -32,6 +33,7 @@ const MyToys = () => {
         <th>Price</th>
         <th>Quantity</th>
         <th>Details</th>
+        <th>Update</th>
       </tr>
     </thead>
     <tbody>
