@@ -4,6 +4,7 @@ import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import { Link } from "react-router-dom";
 import SocialLogin from "../pages/Shared/Social/SocialLogin";
+import Swal from "sweetalert2";
 
 const Register = () => {
     const [error, setError]=useState('')
@@ -25,6 +26,11 @@ const Register = () => {
         .then(result => {
             const user = result.user;
             console.log(user);
+            Swal.fire({
+              icon: 'success',
+              title: 'Wow!',
+              text: 'Sign-up Successfully'
+            })
             form.reset();
         })
         .catch(error => {

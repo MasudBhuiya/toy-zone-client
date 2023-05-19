@@ -3,9 +3,25 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
 import { Link } from "react-router-dom";
+import { useContext } from "react";
+import { AuthContext } from "../../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const CategoryCard = ({toy}) => {
+  const {user} = useContext(AuthContext)
     const {name, picture, price, rating, _id} = toy;
+    
+    const detail = () =>{
+      if(!user){
+        Swal.fire(
+          {
+            icon: 'warning',
+            title: 'Oops...',
+          text:'You have to log in first to view details.'
+          }
+        )
+      }
+    }
     return (
         <div className="card w-80 bg-base-100 shadow-xl">
   <figure><img src={picture} alt="Shoes" /></figure>
@@ -21,7 +37,7 @@ const CategoryCard = ({toy}) => {
     <span className="text-black font-bold ms-2"> { rating}</span>
     </div>
     <div className="card-actions justify-end">
-      <Link to={`/details/${_id}`}><button className="btn btn-primary">View Details</button></Link>
+      <Link to={`/details/${_id}`}><button onClick={detail} className="btn btn-primary">View Details</button></Link>
     </div>
   </div>
 </div>
