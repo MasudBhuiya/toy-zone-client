@@ -3,7 +3,7 @@
 const Gallery = () => {
     return (
         <div className="mt-20">
-            <h1 className="text-3xl font-bold text-center mb-5">Products Items</h1>
+            <h1 className="text-3xl font-bold text-center mb-5">Product Items</h1>
             <div className="grid sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4  w-[90%] mx-auto ">
             <img className="h-64 w-64 m-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsFwcrqfMe5ZJiDKUj6PtQ3FmQAEQG54XhjTKJb28gGBuKN_plU-X-t-1XPGtNJ4mLxkM&usqp=CAU" alt="" />
             <img className="h-64 w-64  m-4" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhkO54H-nV1QzjpddEIw_1-eryYPt87lEcYZHLww4r7yu0orrSpr7f77vyptIkaAOGqvY&usqp=CAU" alt="" />

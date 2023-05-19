@@ -14,11 +14,13 @@ import Category from './pages/Home/Category/Category';
 import AllToys from './pages/AllToys/AllToys';
 import Details from './pages/Details/Details';
 import PrivateRoute from './Private/PrivateRoute';
+import ErrorPage from './pages/Error/ErrorPage';
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
@@ -43,7 +45,7 @@ const router = createBrowserRouter([
       {
         path: 'details/:id',
         element: <PrivateRoute><Details></Details></PrivateRoute>,
-
+        loader: ({params})=> fetch(`http://localhost:5000/toys/${params.id}`)
       }
     ]
   },
