@@ -2,6 +2,7 @@
 
 import { useContext } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
+import Swal from "sweetalert2";
 
 const AddToy = () => {
 
@@ -41,14 +42,23 @@ const AddToy = () => {
         })
         .then(res => res.json())
         .then(data => {
-            console.log(data)
+            console.log(data);
+            if(data.insertedId){
+                Swal.fire({
+                    icon: 'success',
+                    title: 'Wow!',
+                    text: 'Added Successfully'
+                  })
+              }
         })
     }
 
 
 
     return (
-        <div className="w-[60%] mx-auto">
+        <div>
+            <h1 className="font-bold text-4xl text-center mt-10 mb-5">Add a Toy</h1>
+            <div className="w-[60%] mx-auto">
             <form onSubmit={handleSet}>
         <div className="form-control">
           <label className="label">
@@ -96,7 +106,7 @@ const AddToy = () => {
           <label className="label">
             <span className="label-text">Rating</span>
           </label>
-          <input type="number" placeholder="Rating" name='rating' className="input input-bordered" />
+          <input type="text" placeholder="Rating" name='rating' className="input input-bordered" />
         </div>
         <div className="form-control">
           <label className="label">
@@ -114,6 +124,7 @@ const AddToy = () => {
           <input className="btn btn-warning bg-orange-500 text-white" type="submit" value='Add a toy' name="" id="" />
         </div>
         </form>
+        </div>
         </div>
     );
 };
