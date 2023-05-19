@@ -4,7 +4,7 @@ import { Link, useNavigate, useRouteError } from 'react-router-dom';
 const ErrorPage = () => {
         const navigate = useNavigate()
         const handleGoBack =()=>{
-            navigate(-1)
+            navigate('/')
         }
         const {error, status} = useRouteError()
         console.log(error?.message, status)
