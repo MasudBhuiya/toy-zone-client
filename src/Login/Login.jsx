@@ -12,7 +12,7 @@ const Login = () => {
     const navigate = useNavigate()
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
-    console.log(location)
+    // console.log(location)
     const handleLogin = e =>{
         e.preventDefault();
         const form = e.target;
@@ -56,9 +56,7 @@ const Login = () => {
             <span className="label-text">Password</span>
           </label>
           <input type="password" placeholder="password" name='password' className="input input-bordered" />
-          <label className="label">
-            <a href="#" className="label-text-alt link link-hover">Forgot password?</a>
-          </label>
+          
         </div>
         <div className="form-control mt-6">
           <input className="btn btn-warning bg-orange-500 text-white" type="submit" value='Login' name="" id="" />

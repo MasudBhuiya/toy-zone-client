@@ -16,6 +16,7 @@ import Details from './pages/Details/Details';
 import PrivateRoute from './Private/PrivateRoute';
 import ErrorPage from './pages/Error/ErrorPage';
 import Blog from './pages/Blog/Blog';
+import AddToy from './pages/AddToy/AddToy';
 
 const router = createBrowserRouter([
   {
@@ -51,6 +52,10 @@ const router = createBrowserRouter([
       {
         path: 'blog',
         element:<Blog></Blog>
+      },
+      {
+        path: 'addtoys',
+        element: <AddToy></AddToy>
       }
     ]
   },

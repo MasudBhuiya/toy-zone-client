@@ -12,10 +12,10 @@ const Register = () => {
         setError('')
         e.preventDefault();
         const form = e.target;
-        const name = form.name.value;
+        // const name = form.name.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password, name);
+        // console.log(email, password, name);
         
         if(password.length < 6){
              setError('Password is less then 6 characters')

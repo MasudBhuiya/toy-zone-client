@@ -14,7 +14,7 @@ const Category = () => {
         .then(res => res.json())
         .then(data => {
             setItem(data)
-            console.log(data)
+            // console.log(data)
         })
     },[])
 

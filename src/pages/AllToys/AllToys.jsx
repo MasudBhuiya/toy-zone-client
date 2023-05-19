@@ -11,7 +11,7 @@ const AllToys = () => {
         .then(res => res.json())
         .then(data => {
             setItems(data)
-            console.log(data)
+            // console.log(data)
         })
     },[])
 
@@ -24,7 +24,7 @@ const AllToys = () => {
       .then(res => res.json())
         .then(data => {
           setItems(data)
-            console.log(data)
+            // console.log(data)
         })
     }
 

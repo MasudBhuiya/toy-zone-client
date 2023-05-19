@@ -7,7 +7,7 @@ const ErrorPage = () => {
             navigate('/')
         }
         const {error, status} = useRouteError()
-        console.log(error?.message, status)
+        // console.log(error?.message, status)
     return (
         <div className='flex items-center my-12 justify-center text-center'>
             
