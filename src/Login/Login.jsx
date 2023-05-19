@@ -63,7 +63,7 @@ const Login = () => {
         </div>
         </form>
         <h1>New to Toys Shop? <Link className='text-orange-500 font-bold' to='/register'>Sign Up</Link></h1>
-        <p>{error.message}</p>
+        <p className="text-red-600">{error.message}</p>
       <SocialLogin setError={setError}></SocialLogin>
       </div>
     </div>

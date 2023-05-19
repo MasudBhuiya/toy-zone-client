@@ -1,10 +1,11 @@
 // import React from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
   import { faTrashAlt, faEdit } from '@fortawesome/free-solid-svg-icons'
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 
 const MyToysCard = ({toys, handleDelete}) => {
     const {name,sub_cagegory, picture, price, _id, quantity, seller} = toys;
+    const navigate = useNavigate()
     return (
         <tr>
       <th>
@@ -32,7 +33,7 @@ const MyToysCard = ({toys, handleDelete}) => {
         <Link to={`/details/${_id}`}><button className='btn btn-primary'>View Details</button></Link>
       </th>
       <th>
-      <button  className="btn btn-sm ">
+      <button onClick={()=>navigate(`/update/${_id}`)} className="btn btn-sm ">
       <FontAwesomeIcon icon={faEdit} />
 </button>
       </th>
