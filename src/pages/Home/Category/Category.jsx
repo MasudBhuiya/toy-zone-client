@@ -35,7 +35,7 @@ const Category = () => {
     return (
         <Tabs>
     <TabList >
-      <div className='grid md:grid-cols-2 lg:grid-cols-3'>
+      <div className='grid md:grid-cols-2 lg:grid-cols-3 space-y-4'>
       <Tab>
       <div onClick={handleCar} className="card w-80 glass">
   <figure><img className='w-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIL0q6cbFbzAup55a865tiEtU-00CM79jhhhnox6Bje7ilnCsfMc212QV1I0WW5XybzOY&usqp=CAU" alt="car!"/></figure>
@@ -65,21 +65,21 @@ const Category = () => {
     </TabList>
 <br /><br />
     <TabPanel>
-    <div className='grid sm:grid-cols-2'>
+    <div className='grid md:grid-cols-2 lg:grid-cols-3'>
         {
             category.map(ct => <CategoryCard key={ct._id} toy={ct}></CategoryCard>)
         }
     </div>
     </TabPanel>
     <TabPanel>
-    <div className='grid sm:grid-cols-2'>
+    <div className='grid md:grid-cols-2 lg:grid-cols-3'>
         {
             category.map(ct => <CategoryCard key={ct._id} toy={ct}></CategoryCard>)
         }
     </div>
     </TabPanel>
     <TabPanel>
-    <div className='grid sm:grid-cols-2'>
+    <div className='grid md:grid-cols-2 lg:grid-cols-3'>
         {
             category.map(ct => <CategoryCard key={ct._id} toy={ct}></CategoryCard>)
         }

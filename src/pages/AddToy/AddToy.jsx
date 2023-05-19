@@ -7,7 +7,7 @@ const AddToy = () => {
 
     const {user} = useContext(AuthContext)
 
-    const handleLogin = e =>{
+    const handleSet = e =>{
         e.preventDefault();
         const form = e.target;
         const picture = form.picture.value;
@@ -20,7 +20,7 @@ const AddToy = () => {
         const quantity = form.quantity.value;
         const details = form.details.value;
 
-        const object = {
+        const order = {
             picture,
             name,
             seller,
@@ -31,14 +31,25 @@ const AddToy = () => {
             quantity,
             details
         }
-        console.log(object)
+        // console.log(object);
+        fetch('http://localhost:5000/toys',{
+        method: 'POST',
+        headers: {
+            'content-type' : 'application/json'
+        },
+        body: JSON.stringify(order)
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
     }
 
 
 
     return (
         <div className="w-[60%] mx-auto">
-            <form onSubmit={handleLogin}>
+            <form onSubmit={handleSet}>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Toys Picture</span>
