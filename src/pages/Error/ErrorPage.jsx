@@ -1,5 +1,6 @@
 // import React from 'react';
 import { Link, useNavigate, useRouteError } from 'react-router-dom';
+import useTitle from '../../Hooks/useTitle';
 
 const ErrorPage = () => {
         const navigate = useNavigate()
@@ -7,6 +8,7 @@ const ErrorPage = () => {
             navigate('/')
         }
         const {error, status} = useRouteError()
+        useTitle('Error')
         // console.log(error?.message, status)
     return (
         <div className='flex items-center my-12 justify-center text-center'>

@@ -10,7 +10,7 @@ const Category = () => {
     const [category, setCategory] = useState([])
 
     useEffect(()=>{
-        fetch('https://assignment-eleven-server-three.vercel.app/toys')
+        fetch(`https://assignment-eleven-server-three.vercel.app/toys?limit=${20}`)
         .then(res => res.json())
         .then(data => {
             setItem(data)
@@ -20,15 +20,18 @@ const Category = () => {
 
     const handleCar = () =>{
         const car = item.filter(ct => ct.sub_cagegory == 'car');
+        // console.log(car)
         setCategory(car)
     }
     const handleTruckBus = () =>{
-        const car = item.filter(ct => ct.sub_cagegory == 'truck');
-        setCategory(car)
+        const truck = item.filter(ct => ct.sub_cagegory == 'truck');
+        // console.log(truck)
+        setCategory(truck)
     }
     const handlePolice = () =>{
-        const car = item.filter(ct => ct.sub_cagegory == 'police');
-        setCategory(car)
+        const police = item.filter(ct => ct.sub_cagegory == 'police');
+        // console.log(police)
+        setCategory(police)
     }
 
 

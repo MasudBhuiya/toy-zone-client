@@ -4,13 +4,14 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Provider/AuthProvider";
 import MyToysCard from "./MyToysCard";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 
 const MyToys = () => {
     const [myToys, setMyToys] = useState([]);
-
     const {user} = useContext(AuthContext)
+    useTitle('My Toys')
 
-    const url = (`http://localhost:5000/mytoys?email=${user?.email}`);
+    const url = (`https://assignment-eleven-server-three.vercel.app/mytoys?email=${user?.email}`);
     useEffect(()=>{
         fetch(url)
         .then(res => res.json())

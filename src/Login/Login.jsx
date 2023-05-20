@@ -5,6 +5,7 @@ import SocialLogin from "../pages/Shared/Social/SocialLogin";
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
 import Swal from "sweetalert2";
+import useTitle from "../Hooks/useTitle";
 
 const Login = () => {
     const [error, setError] = useState('')
@@ -13,11 +14,13 @@ const Login = () => {
     const location = useLocation();
     const from = location.state?.from?.pathname || '/';
     // console.log(location)
+    useTitle('Login')
     const handleLogin = e =>{
         e.preventDefault();
         const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
+        
         
         login(email, password)
         .then(result => {
@@ -28,6 +31,7 @@ const Login = () => {
                 title: 'Wow!',
                 text: 'Login Successfully'
               })
+              
             navigate(from, {replace: true});
         })
         .catch(error => {

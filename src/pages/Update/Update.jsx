@@ -2,10 +2,12 @@
 
 import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
+import useTitle from "../../Hooks/useTitle";
 
 const Update = () => {
     const data = useLoaderData();
     const navigate = useNavigate();
+    useTitle('Update')
     const {price, _id, quantity, details} = data;
     const handleUpdate = (e) =>{
         e.preventDefault();

@@ -5,11 +5,13 @@ import { AuthContext } from "../Provider/AuthProvider";
 import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../pages/Shared/Social/SocialLogin";
 import Swal from "sweetalert2";
+import useTitle from "../Hooks/useTitle";
 
 const Register = () => {
     const [error, setError]=useState('')
     const {signUp} = useContext(AuthContext);
     const navigate = useNavigate();
+    useTitle('Register')
     const handleSignUp = e =>{
         setError('')
         e.preventDefault();

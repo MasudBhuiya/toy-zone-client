@@ -2,10 +2,12 @@
 
 import { useEffect, useState } from "react";
 import ToysCard from "./ToysCard";
+import useTitle from "../../Hooks/useTitle";
 
 const AllToys = () => {
     const [items, setItems] = useState([]);
-    const [search, setSearch] = useState('')
+    const [search, setSearch] = useState('');
+    useTitle('All Toys')
     useEffect(()=>{
         fetch(`https://assignment-eleven-server-three.vercel.app/toys?limit=${20}`)
         .then(res => res.json())
@@ -60,7 +62,7 @@ const AllToys = () => {
     </thead>
     <tbody>
     {
-                items.slice(0, 20).map(item => <ToysCard key={item._id} item={item}></ToysCard>)
+                items.map(item => <ToysCard key={item._id} item={item}></ToysCard>)
             }
       
     </tbody>

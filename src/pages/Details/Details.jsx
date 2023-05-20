@@ -3,10 +3,11 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faStar, faStarHalfAlt } from '@fortawesome/free-solid-svg-icons'
 import { useLoaderData } from "react-router-dom";
+import useTitle from "../../Hooks/useTitle";
 
 const Details = () => {
     const detail = useLoaderData();
-
+  useTitle('Details')
     const {picture,name, seller, email, price, rating, quantity, details} = detail;
     console.log(detail)
     return (

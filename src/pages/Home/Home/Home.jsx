@@ -8,6 +8,7 @@ import Gallery from "../Gallery/Gallery";
 import { useEffect } from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
+import useTitle from "../../../Hooks/useTitle";
 
 
 const Home = () => {
@@ -18,6 +19,7 @@ const Home = () => {
           once: true, // Whether the animation should occur only once
         });
       }, []);
+      useTitle('Home')
     return (
         <div>
             <div  data-aos="zoom-in">
