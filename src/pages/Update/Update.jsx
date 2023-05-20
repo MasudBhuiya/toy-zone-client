@@ -43,7 +43,8 @@ const Update = () => {
         })
     }
     return (
-        <div>
+        <div className="w-[60%] mx-auto mb-10 mt-10">
+          <h1 className="font-bold text-3xl text-center text-orange-500">Update Now!</h1>
             <form onSubmit={handleUpdate}>
         <div className="form-control">
           <label className="label">
