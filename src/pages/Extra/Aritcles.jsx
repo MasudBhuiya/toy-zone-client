@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const Aritcles = () => {
     return (
         <div className="w-[90%] mx-auto text-center">
-            <h1 className="font-bold text-3xl text-center">Read Our Latest Articles</h1>
+            <h1 className="font-bold text-3xl text-center text-orange-500">Read Our Latest Articles</h1>
             <p className="text-center">More Articles? <Link to='/blog'><span className="btn btn-link">Visits our Blog</span></Link></p>
             <div className="grid sm:grid-cols-2 md:grid-cols-3">
             <div className="p-10">

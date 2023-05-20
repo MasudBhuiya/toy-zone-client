@@ -30,7 +30,7 @@ const Home = () => {
             </div>
             <div data-aos="fade-in" className="w-[90%] text-center mx-auto mt-20 mb-20">
                 <div  data-aos="zoom-in">
-                    <h1 className="font-bold text-3xl mb-7">Car Category</h1>
+                    <h1 className="font-bold text-3xl mb-7 text-orange-500">Car Category</h1>
                 </div>
             <Category></Category>
             </div>

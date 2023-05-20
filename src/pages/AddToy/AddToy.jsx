@@ -59,8 +59,8 @@ const AddToy = () => {
     }
 
     return (
-        <div>
-            <h1 className="font-bold text-4xl text-center mt-10 mb-5">Add a Toy</h1>
+        <div className="mb-10">
+            <h1 className="font-bold text-4xl text-center mt-10 mb-5 text-orange-500">Add a Toy</h1>
             <div className="w-[60%] mx-auto">
             <form onSubmit={handleSet}>
         <div className="form-control">

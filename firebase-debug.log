@@ -1,0 +1,22 @@
+[debug] [2023-05-20T16:20:31.732Z] ----------------------------------------------------------------------
+[debug] [2023-05-20T16:20:31.733Z] Command:       C:\Program Files\nodejs\node.exe C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\bin\firebase.js deploy
+[debug] [2023-05-20T16:20:31.734Z] CLI Version:   11.29.0
+[debug] [2023-05-20T16:20:31.734Z] Platform:      win32
+[debug] [2023-05-20T16:20:31.734Z] Node Version:  v18.12.1
+[debug] [2023-05-20T16:20:31.734Z] Time:          Sat May 20 2023 22:20:31 GMT+0600 (East Kazakhstan Time)
+[debug] [2023-05-20T16:20:31.735Z] ----------------------------------------------------------------------
+[debug] 
+[debug] [2023-05-20T16:20:31.795Z] > command requires scopes: ["email","openid","https://www.googleapis.com/auth/cloudplatformprojects.readonly","https://www.googleapis.com/auth/firebase","https://www.googleapis.com/auth/cloud-platform"]
+[debug] [2023-05-20T16:20:31.796Z] > authorizing via signed-in user (masudbhuiyan1415@gmail.com)
+[debug] [2023-05-20T16:20:31.796Z] [iam] checking project assignment-11-8fe27 for permissions ["firebase.projects.get","firebasehosting.sites.update"]
+[debug] [2023-05-20T16:20:31.798Z] >>> [apiv2][query] POST https://cloudresourcemanager.googleapis.com/v1/projects/assignment-11-8fe27:testIamPermissions [none]
+[debug] [2023-05-20T16:20:31.798Z] >>> [apiv2][(partial)header] POST https://cloudresourcemanager.googleapis.com/v1/projects/assignment-11-8fe27:testIamPermissions x-goog-quota-user=projects/assignment-11-8fe27
+[debug] [2023-05-20T16:20:31.800Z] >>> [apiv2][body] POST https://cloudresourcemanager.googleapis.com/v1/projects/assignment-11-8fe27:testIamPermissions {"permissions":["firebase.projects.get","firebasehosting.sites.update"]}
+[debug] [2023-05-20T16:20:31.838Z] [iam] error while checking permissions, command may fail: FirebaseError: Failed to make request to https://cloudresourcemanager.googleapis.com/v1/projects/assignment-11-8fe27:testIamPermissions
+[debug] [2023-05-20T16:20:31.839Z] >>> [apiv2][query] GET https://firebase.googleapis.com/v1beta1/projects/assignment-11-8fe27 [none]
+[debug] [2023-05-20T16:20:31.843Z] Failed to make request to https://firebase.googleapis.com/v1beta1/projects/assignment-11-8fe27
+[debug] [2023-05-20T16:20:31.848Z] FirebaseError: Failed to make request to https://firebase.googleapis.com/v1beta1/projects/assignment-11-8fe27
+    at RetryOperation._fn (C:\Users\Masud\AppData\Roaming\npm\node_modules\firebase-tools\lib\apiv2.js:242:31)
+    at process.processTicksAndRejections (node:internal/process/task_queues:95:5)
+[error] 
+[error] Error: Failed to get Firebase project assignment-11-8fe27. Please make sure the project exists and your account has permission to access it.
