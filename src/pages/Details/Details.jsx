@@ -27,7 +27,7 @@ const Details = () => {
     <span className="text-black font-bold ms-2"> { rating}</span>
     </div>
     <p className="p-1">Abailable Quantity: {quantity}</p>
-    <p className="p-1">Detail Description: {details}</p>
+    <p className="p-1"><span className="font-bold">Detail Description:</span><br /> {details}</p>
       
     </div>
   </div>

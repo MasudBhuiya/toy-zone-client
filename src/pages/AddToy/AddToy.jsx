@@ -65,32 +65,32 @@ const AddToy = () => {
           <label className="label">
             <span className="label-text">Toys Picture</span>
           </label>
-          <input type="text" placeholder="picture" name='picture' className="input input-bordered" />
+          <input type="text" placeholder="picture" name='picture' className="input input-bordered" required/>
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Toy Name</span>
           </label>
-          <input type="text" placeholder="Toy Name" name='name' className="input input-bordered" />
+          <input type="text" placeholder="Toy Name" name='name' className="input input-bordered"  required/>
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Seller Name</span>
           </label>
-          <input type="text" placeholder="Seller Name" name='seller' className="input input-bordered" />
+          <input type="text" placeholder="Seller Name" name='seller' className="input input-bordered" required />
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Seller Email</span>
           </label>
-          <input type="email" defaultValue={user?.email} placeholder="Email" name='email' className="input input-bordered" />
+          <input type="email" defaultValue={user?.email} placeholder="Email" name='email' className="input input-bordered" required />
         </div>
         <div className="form-control">
         <label className="label">
             <span className="label-text">Sub Category</span>
           </label>
   <div className="input-group ">
-    <select name="subcagegory" className="select select-bordered w-full">
+    <select name="subcagegory" className="select select-bordered w-full"  required>
       <option>car</option>
       <option>truck</option>
       <option>police</option>
@@ -101,25 +101,25 @@ const AddToy = () => {
           <label className="label">
             <span className="label-text">Price</span>
           </label>
-          <input type="number" placeholder="Price" name='price' className="input input-bordered" />
+          <input type="number" placeholder="Price" name='price' className="input input-bordered"  required/>
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Rating</span>
           </label>
-          <input type="text" placeholder="Rating" name='rating' className="input input-bordered" />
+          <input type="text" placeholder="Rating" name='rating' className="input input-bordered"  required/>
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Abailable Quantity</span>
           </label>
-          <input type="number" placeholder="Available Quantity" name='quantity' className="input input-bordered" />
+          <input type="number" placeholder="Available Quantity" name='quantity' className="input input-bordered"  required/>
         </div>
         <div className="form-control">
           <label className="label">
             <span className="label-text">Detail Description</span>
           </label>
-          <textarea name="details" className="border" cols="30" rows="10"></textarea>
+          <textarea name="details" className="border" cols="30" rows="10"  required></textarea>
         </div>
         <div className="form-control mt-6">
           <input className="btn btn-warning bg-orange-500 text-white" type="submit" value='Add a toy' name="" id="" />
