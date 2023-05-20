@@ -7,7 +7,7 @@ const AllToys = () => {
     const [items, setItems] = useState([]);
     const [search, setSearch] = useState('')
     useEffect(()=>{
-        fetch('https://assignment-eleven-server-three.vercel.app/toys')
+        fetch(`https://assignment-eleven-server-three.vercel.app/toys?limit=${20}`)
         .then(res => res.json())
         .then(data => {
             setItems(data)

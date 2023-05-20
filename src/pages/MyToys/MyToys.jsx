@@ -10,7 +10,7 @@ const MyToys = () => {
 
     const {user} = useContext(AuthContext)
 
-    const url = (`https://assignment-eleven-server-three.vercel.app/mytoys?email=${user?.email}`);
+    const url = (`http://localhost:5000/mytoys?email=${user?.email}`);
     useEffect(()=>{
         fetch(url)
         .then(res => res.json())
@@ -33,7 +33,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`https://assignment-eleven-server-three.vercel.app/toys/${id}`, {
+              fetch(`http://localhost:5000/toys/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())
