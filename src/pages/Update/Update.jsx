@@ -1,10 +1,11 @@
 // import React from 'react';
 
-import { useLoaderData } from "react-router-dom";
+import { useLoaderData, useNavigate } from "react-router-dom";
 import Swal from "sweetalert2";
 
 const Update = () => {
     const data = useLoaderData();
+    const navigate = useNavigate();
     const {price, _id, quantity, details} = data;
     const handleUpdate = (e) =>{
         e.preventDefault();
@@ -34,6 +35,7 @@ const Update = () => {
                     icon: 'success',
                     confirmButtonText: 'Cool'
                   })
+                  navigate('/mytoys')
             }
 
         })

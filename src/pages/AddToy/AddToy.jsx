@@ -56,7 +56,6 @@ const AddToy = () => {
         })
     }
 
-
     return (
         <div>
             <h1 className="font-bold text-4xl text-center mt-10 mb-5">Add a Toy</h1>

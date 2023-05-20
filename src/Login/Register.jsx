@@ -9,7 +9,7 @@ import Swal from "sweetalert2";
 const Register = () => {
     const [error, setError]=useState('')
     const {signUp} = useContext(AuthContext);
-    const navigate = useNavigate()
+    const navigate = useNavigate();
     const handleSignUp = e =>{
         setError('')
         e.preventDefault();

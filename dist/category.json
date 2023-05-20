@@ -1,0 +1,56 @@
+[
+    {
+     " category": "Sports Car",
+     "sub_cagegory": "car",
+      "picture": "https://example.com/image1.jpg",
+      "name": "Sports Car 1",
+      "price": "$100,000",
+      "rating": 4.5,
+      "viewDetailsButton": "https://example.com/details1"
+    },
+    {
+      "category": "Truck",
+      "sub_cagegory": "truckBus",
+      "picture": "https://example.com/image2.jpg",
+      "name": "Truck 1",
+      "price": "$50,000",
+      "rating": 4.2,
+      "viewDetailsButton": "https://example.com/details2"
+    },
+    {
+      "category": "Police Car",
+      "sub_cagegory": "police",
+      "picture": "https://example.com/image3.jpg",
+      "name": "Regular Car 1",
+      "price": "$30,000",
+      "rating": 4.0,
+      "viewDetailsButton": "https://example.com/details3"
+    },
+    {
+     " category": "Sports Car",
+     "sub_cagegory": "car",
+      "picture": "https://example.com/image1.jpg",
+      "name": "Sports Car 1",
+      "price": "$100,000",
+      "rating": 4.5,
+      "viewDetailsButton": "https://example.com/details1"
+    },
+    {
+      "category": "Truck",
+      "sub_cagegory": "truckBus",
+      "picture": "https://example.com/image2.jpg",
+      "name": "Truck 1",
+      "price": "$50,000",
+      "rating": 4.2,
+      "viewDetailsButton": "https://example.com/details2"
+    },
+    {
+      "category": "Police Car",
+      "sub_cagegory": "police",
+      "picture": "https://example.com/image3.jpg",
+      "name": "Regular Car 1",
+      "price": "$30,000",
+      "rating": 4.0,
+      "viewDetailsButton": "https://example.com/details3"
+    }
+  ]
