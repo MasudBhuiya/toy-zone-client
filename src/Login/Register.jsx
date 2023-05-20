@@ -2,13 +2,14 @@
 
 import { useContext, useState } from "react";
 import { AuthContext } from "../Provider/AuthProvider";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import SocialLogin from "../pages/Shared/Social/SocialLogin";
 import Swal from "sweetalert2";
 
 const Register = () => {
     const [error, setError]=useState('')
-    const {signUp} = useContext(AuthContext)
+    const {signUp} = useContext(AuthContext);
+    const navigate = useNavigate()
     const handleSignUp = e =>{
         setError('')
         e.preventDefault();
@@ -32,6 +33,7 @@ const Register = () => {
               text: 'Sign-up Successfully'
             })
             form.reset();
+            navigate('/')
         })
         .catch(error => {
             setError(error.message)

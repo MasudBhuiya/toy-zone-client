@@ -10,7 +10,7 @@ const Category = () => {
     const [category, setCategory] = useState([])
 
     useEffect(()=>{
-        fetch('http://localhost:5000/toys')
+        fetch('https://assignment-eleven-server-three.vercel.app/toys')
         .then(res => res.json())
         .then(data => {
             setItem(data)
@@ -35,33 +35,24 @@ const Category = () => {
     return (
         <Tabs>
     <TabList >
-      <div className='grid md:grid-cols-2 lg:grid-cols-3 space-y-4'>
+      <div className='font-bold bg-slate-100 rounded'>
       <Tab>
-      <div onClick={handleCar} className="card w-80 glass">
-  <figure><img className='w-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIL0q6cbFbzAup55a865tiEtU-00CM79jhhhnox6Bje7ilnCsfMc212QV1I0WW5XybzOY&usqp=CAU" alt="car!"/></figure>
-  <div className="card-body">
-    <h2 className="card-title">Sports Car / Normal Car</h2>
-  </div>
+      <div onClick={handleCar} className="">
+  Sports Car
 </div>
       </Tab>
       <Tab>
-        <div onClick={handleTruckBus} className="card w-80 glass">
-  <figure><img className='w-full' src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQxlAThtSwWNeFrwC-uglSrkt0ckKyV7QmtUjE-x08EYqyECi9Fsj3XddHW86BbsABhWdM&usqp=CAU" alt="car!"/></figure>
-  <div className="card-body">
-    <h2 className="card-title">Bus / Truck</h2>
-  </div>
+        <div onClick={handleTruckBus} className="">
+  Truck
   </div>
       </Tab>
       <Tab>
-        <div onClick={handlePolice} className="card w-80 glass">
-  <figure><img src="https://media.gettyimages.com/id/521200846/photo/british-police-car-model-in-scale.jpg?s=612x612&w=0&k=20&c=mTcb0DwEOrLpLobtjKfF-eusy3X08XnsxPapjZ8s6B0=" alt="car!"/></figure>
-  <div className="card-body">
-    <h2 className="card-title">Police Car</h2>
-  </div>
+        <div onClick={handlePolice} className="">
+        Police Car
   </div>
       </Tab>
       </div>
-      <br /><br />
+      <br />
     </TabList>
 <br /><br />
     <TabPanel>

@@ -17,7 +17,7 @@ const Update = () => {
             quantity,
             details
         }
-        fetch(`http://localhost:5000/toys/${_id}`,{
+        fetch(`https://assignment-eleven-server-three.vercel.app/toys/${_id}`,{
             method: 'PUT',
             headers: {
                 'content-type' : 'application/json'

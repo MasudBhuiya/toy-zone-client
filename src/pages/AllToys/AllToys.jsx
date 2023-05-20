@@ -7,7 +7,7 @@ const AllToys = () => {
     const [items, setItems] = useState([]);
     const [search, setSearch] = useState('')
     useEffect(()=>{
-        fetch('http://localhost:5000/toys')
+        fetch('https://assignment-eleven-server-three.vercel.app/toys')
         .then(res => res.json())
         .then(data => {
             setItems(data)

@@ -10,7 +10,7 @@ const MyToys = () => {
 
     const {user} = useContext(AuthContext)
 
-    const url = (`http://localhost:5000/mytoys?email=${user?.email}`);
+    const url = (`https://assignment-eleven-server-three.vercel.app/mytoys?email=${user?.email}`);
     useEffect(()=>{
         fetch(url)
         .then(res => res.json())
@@ -33,7 +33,7 @@ const MyToys = () => {
             confirmButtonText: 'Yes, delete it!'
           }).then((result) => {
             if (result.isConfirmed) {
-              fetch(`http://localhost:5000/toys/${id}`, {
+              fetch(`https://assignment-eleven-server-three.vercel.app/toys/${id}`, {
             method: 'DELETE',
         })
         .then(res => res.json())
@@ -52,25 +52,6 @@ const MyToys = () => {
             }
           })
 
-
-
-
-        // fetch(`http://localhost:5000/toys/${id}`, {
-        //     method: 'DELETE',
-        // })
-        // .then(res => res.json())
-        // .then(data => {
-        //     console.log(data)
-        //     if(data. deletedCount> 0){
-        //         const remaining = myToys.filter(booking => booking._id !== id);
-        //         setMyToys(remaining)
-        //         Swal.fire({
-        //             icon: 'success',
-        //             title: 'Wow!',
-        //             text: 'Added Successfully'
-        //           })
-        //     }
-        // })
     }
 
 

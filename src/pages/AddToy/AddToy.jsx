@@ -34,7 +34,7 @@ const AddToy = () => {
             details
         }
         // console.log(object);
-        fetch('http://localhost:5000/toys',{
+        fetch('https://assignment-eleven-server-three.vercel.app/toys',{
         method: 'POST',
         headers: {
             'content-type' : 'application/json'
