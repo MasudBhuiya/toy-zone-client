@@ -22,7 +22,7 @@ const AllToys = () => {
 
 
     const handleSearch = () =>{
-      fetch(`http://localhost:5000/toySearch/${search}`)
+      fetch(`https://assignment-eleven-server-three.vercel.app/toySearch/${search}`)
       .then(res => res.json())
         .then(data => {
           setItems(data)
