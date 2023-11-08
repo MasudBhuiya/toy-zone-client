@@ -5,7 +5,7 @@ import { createContext, useEffect, useState } from "react";
 
 const auth = getAuth(app);
 const provider = new GoogleAuthProvider();
-export const AuthContext = createContext(null)
+export const AuthContext = createContext(null);
 
 const AuthProvider = ({children}) => {
     const [user, setUser] = useState(null);

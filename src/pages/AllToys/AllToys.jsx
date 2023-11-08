@@ -7,15 +7,17 @@ import useTitle from "../../Hooks/useTitle";
 const AllToys = () => {
     const [items, setItems] = useState([]);
     const [search, setSearch] = useState('');
+    const [asc, setAsc] = useState(true);
     useTitle('All Toys')
     useEffect(()=>{
-        fetch(`https://assignment-eleven-server-three.vercel.app/toys?limit=${20}`)
+        fetch(`https://assignment-eleven-server-three.vercel.app/toys?sort=${asc ? 'asc': 'desc'}&limit=${20}`)
+        // fetch(`http://localhost:5000/toys?sort=${asc ? 'asc': 'desc'}&limit=${20}`)
         .then(res => res.json())
         .then(data => {
             setItems(data)
             // console.log(data)
         })
-    },[])
+    },[asc])
 
     // useEffect(()=>{
     // },[])
@@ -33,8 +35,9 @@ const AllToys = () => {
 
 
     return (
-        <div>
+        <div className="max-w-screen-2xl mx-auto ">
             <h1 className="text-3xl font-bold text-orange-500 mb-5 text-center">All Toys: {items.length}</h1>
+            <button className="btn btn-primary ms-4" onClick={()=>setAsc(!asc)}>{asc ? 'Price High to Low': 'Price Low to High'}</button>
             <div className=" flex justify-center mb-7">
             <div className="form-control">
   <div className="input-group">
@@ -47,10 +50,10 @@ const AllToys = () => {
             </div>
 
 <div className="overflow-x-auto w-full">
-  <table className="table w-full">
+  <table className="table  w-full">
     {/* head */}
-    <thead>
-      <tr>
+    <thead className="">
+      <tr className="">
         <th>Image</th>
         <th>Toy Name</th>
         <th>Seller</th>

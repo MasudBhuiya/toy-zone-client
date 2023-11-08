@@ -30,7 +30,7 @@ const ToysCard = ({item}) => {
 </button>
       </th> */}
       <td>
-          <div className="avatar ">
+          <div className="avatar">
 
             <div className="rounded w-24 h-24">
               {picture && <img src={picture} alt="Avatar Tailwind CSS Component" />}
@@ -41,7 +41,7 @@ const ToysCard = ({item}) => {
       <td>
         {name}
       </td>
-      <td>{seller}</td>
+      <td className=''>{seller}</td>
       <td>{sub_cagegory}</td>
       <td>{price}</td>
       <td>{quantity}</td>

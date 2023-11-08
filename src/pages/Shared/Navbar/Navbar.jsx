@@ -11,10 +11,9 @@ const Navbar = () => {
 
   const handleLogout = ()=>{
     logOut()
-    .then(()=>{
-    })
-    .catch(err => {
-      console.log(err) 
+    .then()
+    .catch(error=>{
+      console.log(error);
     })
   }
 

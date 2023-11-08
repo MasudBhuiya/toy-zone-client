@@ -59,40 +59,42 @@ const AddToy = () => {
     }
 
     return (
-        <div className="mb-10">
+        <div className="md:p-10 p-3 bg-slate-900 max-w-screen-2xl mx-auto">
             <h1 className="font-bold text-4xl text-center mt-10 mb-5 text-orange-500">Add a Toy</h1>
-            <div className="w-[60%] mx-auto">
-            <form onSubmit={handleSet}>
+            <div className=" mx-auto">
+            <form onSubmit={handleSet} >
+        <div className="grid md:grid-cols-2 gap-4">
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Toys Picture</span>
+            {/* <span className="label-text text-white font-bold text-lg">Toys Picture</span> */}
           </label>
-          <input type="text" placeholder="picture" name='picture' className="input input-bordered" required/>
+          <input type="text" placeholder="picture" name='picture' className="input input-bordered bg-slate-700 border border-stone-200" required/>
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Toy Name</span>
+            {/* <span className="label-text text-white font-bold text-lg">Toy Name</span> */}
           </label>
-          <input type="text" placeholder="Toy Name" name='name' className="input input-bordered"  required/>
+          <input type="text" placeholder="Toy Name" name='name' className="input input-bordered bg-slate-700 border border-stone-200"  required/>
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Seller Name</span>
+            {/* <span className="label-text text-white font-bold text-lg">Seller Name</span> */}
           </label>
-          <input type="text" placeholder="Seller Name" name='seller' className="input input-bordered" required />
+          <input type="text" placeholder="Seller Name" name='seller' className="input input-bordered bg-slate-700 border border-stone-200" required />
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Seller Email</span>
+            {/* <span className="label-text text-white font-bold text-lg">Seller Email</span> */}
           </label>
-          <input type="email" defaultValue={user?.email} placeholder="Email" name='email' className="input input-bordered" required />
+          <input type="email" defaultValue={user?.email} placeholder="Email" name='email' className="input input-bordered border border-stone-200 bg-slate-700" required />
         </div>
         <div className="form-control">
         <label className="label">
-            <span className="label-text">Sub Category</span>
+            {/* <span className="label-text text-white font-bold text-lg">Sub Category</span> */}
           </label>
   <div className="input-group ">
-    <select name="subcagegory" className="select select-bordered w-full"  required>
+    <select name="subcagegory"  className="select select-bordered w-full bg-slate-700 border border-stone-200 text-gray-400"  required>
+      <option disabled selected>Car Type</option>
       <option>car</option>
       <option>truck</option>
       <option>police</option>
@@ -101,27 +103,28 @@ const AddToy = () => {
 </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Price</span>
+            {/* <span className="label-text text-white font-bold text-lg">Price</span> */}
           </label>
-          <input type="number" placeholder="Price" name='price' className="input input-bordered"  required/>
+          <input type="number" placeholder="Price" name='price' className="input input-bordered bg-slate-700 border border-stone-200"  required/>
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Rating</span>
+            {/* <span className="label-text text-white font-bold text-lg">Rating</span> */}
           </label>
-          <input type="text" placeholder="Rating" name='rating' className="input input-bordered"  required/>
+          <input type="text" placeholder="Rating" name='rating' className="input input-bordered bg-slate-700 border border-stone-200"  required/>
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Abailable Quantity</span>
+            {/* <span className="label-text text-white font-bold text-lg">Abailable Quantity</span> */}
           </label>
-          <input type="number" placeholder="Available Quantity" name='quantity' className="input input-bordered"  required/>
+          <input type="number" placeholder="Available Quantity" name='quantity' className="input input-bordered bg-slate-700 border border-stone-200"  required/>
+        </div>
         </div>
         <div className="form-control">
           <label className="label">
-            <span className="label-text">Detail Description</span>
+            {/* <span className="label-text text-white font-bold text-lg">Detail Description</span> */}
           </label>
-          <textarea name="details" className="border" cols="30" rows="10"  required></textarea>
+          <textarea name="details" className="border p-2 rounded bg-slate-700" cols="30" rows="10" placeholder="Details"  required></textarea>
         </div>
         <div className="form-control mt-6">
           <input className="btn btn-warning bg-orange-500 text-white" type="submit" value='Add a toy' name="" id="" />

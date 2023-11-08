@@ -5,7 +5,7 @@ import useTitle from "../../Hooks/useTitle";
 const Blog = () => {
     useTitle('Blog')
     return (
-        <div className="w-[90%] mx-auto p-5 space-y-4">
+        <div className="w-[90%] mx-auto p-5 bg-slate-900 text-white font-semibold space-y-4">
             <div>
             <p>(1) Q. What is an access token and refresh token? How do they work and where should we store them on the client-side?</p>
             <h1>Ans: Access tokens are used to make secure the users application. when a client login the website, then Refrest token send a access token. Access tokens are used for making authenticated API requests. Access tokens have a limited lifespan and expire after a certain time. A refresh token plays a crucial role in obtaining a new access token when the current one expires. We store then in a localstorge or in a HTTP only cookies.</h1>
